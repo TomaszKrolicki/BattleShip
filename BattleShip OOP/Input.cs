@@ -8,23 +8,36 @@ namespace BattleShip_OOP
 {
     public class Input
     {
-        public static int GetNumberFromMenu()
+        
+        public static int GetNumberFromMenu(int[] valibleInts)
         {
             string userInput = Console.ReadLine();
-            int[] valibleInts = { 1, 2, 3 };
+            
             bool isNumber = int.TryParse(userInput, out int value);
-            Console.WriteLine(!isNumber);
-            Console.WriteLine(!valibleInts.Contains(value));
             while (!isNumber || !valibleInts.Contains(value))
+            
             {
-                Console.WriteLine(!isNumber);
-                Console.WriteLine(!valibleInts.Contains(value));
                 Console.WriteLine("Wrong input!");
                 Console.WriteLine("Try again");
                 userInput = Console.ReadLine();
                 isNumber = int.TryParse(userInput, out value);
             }
             return value;
+        }
+
+        public static Tuple<int,int> GetPlayerShootCoordinates()
+        {
+            Console.WriteLine("Where you want to shoot? (ex. 'A1')");
+            string coordinates = Console.ReadLine();
+            bool isPlayerInputCorrect = Util.CheckPlayerInput(coordinates);
+            while (!isPlayerInputCorrect)
+            {
+                Console.WriteLine("Wrong input!!! Try again. (e.g. 'A1')");
+                coordinates = Console.ReadLine();
+                isPlayerInputCorrect = Util.CheckPlayerInput(coordinates);
+            }
+
+            return Util.ParseCoordinatesIntoTuple(coordinates);
         }
     }
 }

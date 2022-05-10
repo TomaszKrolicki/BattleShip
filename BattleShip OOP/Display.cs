@@ -17,5 +17,15 @@ namespace BattleShip_OOP
             Console.WriteLine("3 - Exit");
             Console.WriteLine("Choose number:");
         }
+
+        public static void BoardFactoryMenu()
+        {
+            Console.WriteLine("Welcome in Board Factory");
+            Console.WriteLine();
+            Console.WriteLine("1 - Random Placement");
+            Console.WriteLine("2 - Manual Placement");
+            Console.WriteLine("Choose your option:");
+
+        }
     }
 }
