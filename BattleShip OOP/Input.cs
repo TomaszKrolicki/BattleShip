@@ -13,10 +13,12 @@ namespace BattleShip_OOP
             string userInput = Console.ReadLine();
             int[] valibleInts = { 1, 2, 3 };
             bool isNumber = int.TryParse(userInput, out int value);
-            //Console.WriteLine(!isNumber);
-            //Console.WriteLine(!valibleInts.Contains(value));
+            Console.WriteLine(!isNumber);
+            Console.WriteLine(!valibleInts.Contains(value));
             while (!isNumber || !valibleInts.Contains(value))
             {
+                Console.WriteLine(!isNumber);
+                Console.WriteLine(!valibleInts.Contains(value));
                 Console.WriteLine("Wrong input!");
                 Console.WriteLine("Try again");
                 userInput = Console.ReadLine();
@@ -24,7 +26,5 @@ namespace BattleShip_OOP
             }
             return value;
         }
-
-
     }
 }

@@ -10,6 +10,8 @@ namespace BattleShip_OOP
         {
             Display.MainMenu();
             int player = Input.GetNumberFromMenu();
+            Player newPlayer = new Player("bob", new char[2, 2]);
+            Console.WriteLine(newPlayer.ame);
         }
     }
 }
