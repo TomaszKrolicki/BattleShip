@@ -9,10 +9,15 @@ namespace BattleShip_OOP
         public static void Main(string[] args)
         {
             Display.MainMenu();
-            
-            int player = Input.GetNumberFromMenu(new int[] { 1,2,3});
-            Display.BoardFactoryMenu();         
-            int board = Input.GetNumberFromMenu(new int[] { 1,2 });
+
+            int player = Input.GetNumberFromMenu(new int[] { 1, 2, 3 });
+            Display.BoardFactoryMenu();
+            int board = Input.GetNumberFromMenu(new int[] { 1, 2 });
+
+
+            Tuple<int, int> playerCoordinates = Input.GetPlayerShootCoordinates();
+            Console.WriteLine(playerCoordinates.Item1);
+            Console.WriteLine(playerCoordinates.Item2);
 
             // jezeli nowa gra
             // player 1
