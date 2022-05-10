@@ -31,5 +31,19 @@ namespace BattleShip_OOP
                 return value;
         }
 
+        public static Tuple<int,int> GetPlayerShootCoordinates()
+        {
+            Console.WriteLine("Where you want to shoot? (ex. 'A1')");
+            string coordinates = Console.ReadLine();
+            bool isPlayerInputCorrect = Util.CheckPlayerInput(coordinates);
+            while (!isPlayerInputCorrect)
+            {
+                Console.WriteLine("Wrong input!!! Try again. (e.g. 'A1')");
+                coordinates = Console.ReadLine();
+                isPlayerInputCorrect = Util.CheckPlayerInput(coordinates);
+            }
+
+            return Util.ParseCoordinatesIntoTuple(coordinates);
+        }
     }
 }
