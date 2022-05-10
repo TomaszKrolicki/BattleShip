@@ -8,11 +8,17 @@ namespace BattleShip_OOP
     {
         public static void Main(string[] args)
         {
+            Square square = new Square(5,6);
+            square.SquereType = SquereType.Ship;
+            Console.WriteLine(square.Symbol);
+            Console.WriteLine(square);
             Display.MainMenu();
-            
+            // MainManuValidSelection
             int player = Input.GetNumberFromMenu(new int[] { 1,2,3});
             Display.BoardFactoryMenu();         
             int board = Input.GetNumberFromMenu(new int[] { 1,2 });
+            Board board1 = new Board();
+            board1.createBoard();
 
             // jezeli nowa gra
             // player 1
