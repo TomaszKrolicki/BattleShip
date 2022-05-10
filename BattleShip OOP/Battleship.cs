@@ -9,7 +9,11 @@ namespace BattleShip_OOP
         public static void Main(string[] args)
         {
             Display.MainMenu();
-            int player = Input.GetNumberFromMenu();
+            
+            int player = Input.GetNumberFromMenu(new int[] { 1,2,3});
+            Display.BoardFactoryMenu();         
+            int board = Input.GetNumberFromMenu(new int[] { 1,2 });
+
             // jezeli nowa gra
             // player 1
             // wprowadz imie
@@ -25,7 +29,7 @@ namespace BattleShip_OOP
             // statki w lini prostej, horyzontalnie lub wertykalnie
             // statki nie moga laczyc sie ze soba
             // validacja czy sie da postawic statek, nie wychodzi poza board i czy nie laczy sie z innym 
-            
+
 
 
 
