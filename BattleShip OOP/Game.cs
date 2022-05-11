@@ -30,10 +30,19 @@ namespace BattleShip_OOP
                 if (orientation == "R")
                 {
                     player.AddShipToList(new Ship(new Tuple<int, int>(column, row + j), shipType));
+                    player.boardWithShips[column, row + j].SquereType = SquereType.Ship;
+                    Display.DisplayBoard(player.boardWithShips);
+                    //for (int x = 0; x < player.shipList[j].GetLength(); x++)
+                    //{
+                    //    player.boardWithShips[column,row]
+                    //}
+
                 } 
                 else if (orientation == "D")
                 {
                     player.AddShipToList(new Ship(new Tuple<int, int>(column + j, row), shipType));
+                    player.boardWithShips[column + j, row].SquereType = SquereType.Ship;
+                    Display.DisplayBoard(player.boardWithShips);
                 }
                 
             }

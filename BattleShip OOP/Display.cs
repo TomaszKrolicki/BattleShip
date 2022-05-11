@@ -34,7 +34,7 @@ namespace BattleShip_OOP
             {
                 for (int j = 0; j < Field.GetLength(1); j++)
                 {
-                    Console.Write(Field[i, j]);
+                    Console.Write($"{Field[i, j]} ");
                 }
                 Console.WriteLine();
             }
