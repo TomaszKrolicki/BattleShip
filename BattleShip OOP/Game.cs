@@ -12,12 +12,34 @@ namespace BattleShip_OOP
         {
             for (int i =1;i<6;i++)
             {
+                Tuple<int, int> cords = Input.GetPlayerCoordinates("placement");
                 string orientation = Input.GetShipOrientation();
-                Tuple<int, int> cords = Input.GetPlayerShootCoordinates();
-                ShipType shipType = (ShipType) i; 
-                player.AddShipToList( new Ship(cords,shipType));
-                 // dodac input do kordynatow  i pozycja statku (dol lub lewo)
+                AddShipsToList(orientation, cords, player, i);
+                // dodac input do kordynatow  i pozycja statku (dol lub lewo)
             }
+        }
+
+        public static void AddShipsToList(string orientation, Tuple<int, int> cords, Player player, int number)
+        {
+            ShipType shipType = (ShipType)number;
+            int shipLength = (int)shipType;
+            int column = cords.Item1;
+            int row = cords.Item2;
+            for (int j = 0; j < (int)shipLength; j++)
+            {
+                if (orientation == "R")
+                {
+                    player.AddShipToList(new Ship(new Tuple<int, int>(column, row + j), shipType));
+                } 
+                else if (orientation == "D")
+                {
+                    player.AddShipToList(new Ship(new Tuple<int, int>(column + j, row), shipType));
+                }
+                
+            }
+            
+            
+
         }
 
     }

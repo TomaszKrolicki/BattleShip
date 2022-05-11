@@ -39,5 +39,29 @@ namespace BattleShip_OOP
                 Console.WriteLine();
             }
         }
+
+        public static void CommentForShooting()
+        {
+            Console.WriteLine("Where you want to shoot? (ex. 'A1')");
+        }
+        
+        public static void CommentForWrongInput()
+        {
+            Console.WriteLine("Wrong input!!!");
+        }
+        
+        public static void CommentForShipOrientation()
+        {
+            Console.WriteLine("Enter ship orientation (R - right , D - down): ");
+        }
+        
+        public static void CommentForShipPlacement()
+        {
+            Console.WriteLine("Where you want to place your ship??");
+        }
+
+
+
+
     }
 }

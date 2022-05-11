@@ -31,15 +31,22 @@ namespace BattleShip_OOP
                 return value;
         }
 
-        public static Tuple<int,int> GetPlayerShootCoordinates()
+        public static Tuple<int,int> GetPlayerCoordinates(string mode)
         {
-            Console.WriteLine("Where you want to shoot? (ex. 'A1')");
-            string coordinates = Console.ReadLine();
+            if (mode == "shooting")
+            {
+                Display.CommentForShooting();
+            }
+            else
+            {
+                Display.CommentForShipPlacement();
+            }
+            string coordinates = Console.ReadLine().ToUpper();
             bool isPlayerInputCorrect = Util.CheckPlayerInput(coordinates);
             while (!isPlayerInputCorrect)
             {
-                Console.WriteLine("Wrong input!!! Try again. (e.g. 'A1')");
-                coordinates = Console.ReadLine();
+                Display.CommentForWrongInput();
+                coordinates = Console.ReadLine().ToUpper();
                 isPlayerInputCorrect = Util.CheckPlayerInput(coordinates);
             }
 
@@ -51,7 +58,7 @@ namespace BattleShip_OOP
             string orientation;
             do
             {
-                Console.WriteLine("Enter ship orientation (R - right , D - down): ");
+                Display.CommentForShipOrientation();
                 orientation = Console.ReadLine().ToUpper();
                 if (orientation == "R" || orientation == "D")
                 {
