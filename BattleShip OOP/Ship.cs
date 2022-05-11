@@ -11,6 +11,7 @@ namespace BattleShip_OOP
         private Tuple<int, int> shipCoordinates;
         private List<Square> shipList;
         private readonly ShipType _shipType;
+        private int shipLength;
 
 
         public Ship(Tuple<int, int> coordinates, ShipType shipType)
@@ -18,6 +19,7 @@ namespace BattleShip_OOP
             shipCoordinates = coordinates;
             shipList = new List<Square>();
             _shipType = shipType;
+            shipLength = (int) _shipType;
         }
 
         

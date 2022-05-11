@@ -11,8 +11,8 @@ namespace BattleShip_OOP
     {
         private string name = "none";
         public Square[,] boardWithShips;
-        private List<Ship> shipList;
-        public Square[,] boardForShooting;
+        public List<Ship> shipList;
+        public Square[,] boardToShoot;
 
 
         public void AddShipToList(Ship ship)
@@ -20,10 +20,12 @@ namespace BattleShip_OOP
             shipList.Add(ship);
         }
 
-        public Player(string name, Square[,] board)
+        public Player(string name, Square[,] boardWithShips, Square[,] boardToShoot)
         {
             this.name = name;
-            this.boardWithShips = board;
+            this.boardWithShips = boardWithShips;
+            this.boardToShoot = boardToShoot;
+            shipList = new List<Ship>();
         }
 
         //public void GetShoot(int x, int y)

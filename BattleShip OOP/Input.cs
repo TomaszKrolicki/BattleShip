@@ -45,5 +45,20 @@ namespace BattleShip_OOP
 
             return Util.ParseCoordinatesIntoTuple(coordinates);
         }
+
+        public static string GetShipOrientation()
+        {
+            string orientation;
+            do
+            {
+                Console.WriteLine("Enter ship orientation (R - right , D - down): ");
+                orientation = Console.ReadLine().ToUpper();
+                if (orientation == "R" || orientation == "D")
+                {
+                    return orientation;
+                }
+            } while (true);
+        }
     }
+
 }
