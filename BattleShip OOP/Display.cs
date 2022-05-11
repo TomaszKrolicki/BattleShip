@@ -27,5 +27,17 @@ namespace BattleShip_OOP
             Console.WriteLine("Choose your option:");
 
         }
+
+        public static void DisplayBoard(Square[,] Field)
+        {
+            for (int i = 0; i < Field.GetLength(0); i++)
+            {
+                for (int j = 0; j < Field.GetLength(1); j++)
+                {
+                    Console.Write(Field[i, j]);
+                }
+                Console.WriteLine();
+            }
+        }
     }
 }

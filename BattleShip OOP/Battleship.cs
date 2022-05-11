@@ -18,7 +18,22 @@ namespace BattleShip_OOP
             Display.BoardFactoryMenu();         
             int board = Input.GetNumberFromMenu(new int[] { 1,2 });
             Board board1 = new Board();
-            board1.createBoard();
+            Display.DisplayBoard(board1.Field);
+            Console.WriteLine(" ");
+            board1.Field[2, 6].SquereType = SquereType.Ship;
+            Display.DisplayBoard(board1.Field);
+            Console.WriteLine(" ");
+            if (board1.Field[2, 6].SquereType == SquereType.Ship)
+            {
+                board1.Field[2, 6].SquereType = SquereType.Hit;
+            }
+            Display.DisplayBoard(board1.Field);
+
+
+            //Player player1 = new Player("byleco", player1board);
+            //Ship cruiser = new Ship(new Tuple<int, int>(0, 0)); // (0,0), (0,1), (0,2), (0,3), (0,4)
+            //player1.AddShipToList(cruiser);
+
 
             // jezeli nowa gra
             // player 1

@@ -11,21 +11,18 @@ namespace BattleShip_OOP
 
         private static int Width = 7;
         private static int Height = 7;
-        public Square[,] board;
+        public Square[,] Field;
 
-        public Square[,] createBoard()
+        public Board()
         {
-            board = new Square[Width, Height];
+            Field = new Square[Width, Height];
             for (int x = 0; x < Width; x++)
             {
                 for (int y = 0; y < Height; y++)
                 {
-                    board[x, y] = new Square(x,y);
+                    Field[x, y] = new Square(x,y);
                 }
             }
-
-            Console.ReadKey();
-            return board;
         }
         
 

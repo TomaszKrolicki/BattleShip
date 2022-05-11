@@ -10,21 +10,28 @@ namespace BattleShip_OOP
     public class Player
     {
         private string name = "none";
-        private char[,] board = new char[7,7];
+        public Square[,] boardWithShips;
+        private List<Ship> shipList;
+        public Square[,] boardForShooting;
 
 
-        public Player(string name, char[,] board)
+        public void AddShipToList(Ship ship)
+        {
+            shipList.Add(ship);
+        }
+
+        public Player(string name, Square[,] board)
         {
             this.name = name;
-            this.board = board;
+            this.boardWithShips = board;
         }
 
-        public void GetShoot(int x, int y)
-        {
-            board[x,y] = 'X' ;
-        }
+        //public void GetShoot(int x, int y)
+        //{
+        //    board[x,y] = 'X' ;
+        //}
 
-        public bool IsAlive(char[,] board)
+        public bool IsAlive(Square[,] board)
         {
             return false;
         }

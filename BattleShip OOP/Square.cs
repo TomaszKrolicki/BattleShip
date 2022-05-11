@@ -18,6 +18,8 @@
             type = SquereType.Empty;
         }
 
+        
+
         public char Symbol
         {
             get
@@ -39,7 +41,7 @@
                 }
                 else
                 {
-                    return ' ';
+                    return '.';
                 }
                 
 
@@ -48,11 +50,8 @@
 
         public override string ToString()
         {
-            return $"{ Symbol } ({ position })";
+            return $"{ Symbol }";
         }
-
-
-
-
+        
     }
 }
