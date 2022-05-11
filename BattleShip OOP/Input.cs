@@ -31,7 +31,7 @@ namespace BattleShip_OOP
                 return value;
         }
 
-        public static Tuple<int,int> GetPlayerCoordinates(string mode)
+        public static Tuple<int,int> GetPlayerCoordinates(string mode, Player player)
         {
             if (mode == "shooting")
             {
@@ -39,7 +39,7 @@ namespace BattleShip_OOP
             }
             else
             {
-                Display.CommentForShipPlacement();
+                Display.CommentForShipPlacement(player);
             }
             string coordinates = Console.ReadLine().ToUpper();
             bool isPlayerInputCorrect = Util.CheckPlayerInput(coordinates);
@@ -65,6 +65,13 @@ namespace BattleShip_OOP
                     return orientation;
                 }
             } while (true);
+        }
+
+        public static string GetPlayerName()
+        {
+            Display.AskForPlayerName();
+            string playerName = Console.ReadLine();
+            return playerName;
         }
     }
 

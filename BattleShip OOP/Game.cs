@@ -8,48 +8,28 @@ namespace BattleShip_OOP
 {
     public class Game
     {
-        public static void ShipGenerator(Player player) 
+        public static void RunGame()
         {
-            for (int i =1;i<6;i++)
-            {
-                Tuple<int, int> cords = Input.GetPlayerCoordinates("placement");
-                string orientation = Input.GetShipOrientation();
-                AddShipsToList(orientation, cords, player, i);
-                // dodac input do kordynatow  i pozycja statku (dol lub lewo)
-            }
-        }
+            string player1Name = Input.GetPlayerName();
+            Board player1BoardForShips = new Board();
+            Board player1BoardForShooting = new Board();
+            Player player1 = new Player(player1Name, player1BoardForShips.Field, player1BoardForShooting.Field);
 
-        public static void AddShipsToList(string orientation, Tuple<int, int> cords, Player player, int number)
-        {
-            ShipType shipType = (ShipType)number;
-            int shipLength = (int)shipType;
-            int column = cords.Item1;
-            int row = cords.Item2;
-            for (int j = 0; j < (int)shipLength; j++)
-            {
-                if (orientation == "R")
-                {
-                    player.AddShipToList(new Ship(new Tuple<int, int>(column, row + j), shipType));
-                    player.boardWithShips[column, row + j].SquereType = SquereType.Ship;
-                    Display.DisplayBoard(player.boardWithShips);
-                    //for (int x = 0; x < player.shipList[j].GetLength(); x++)
-                    //{
-                    //    player.boardWithShips[column,row]
-                    //}
+            string player2Name = Input.GetPlayerName();
+            Board player2BoardForShips = new Board();
+            Board player2BoardForShooting = new Board();
+            Player player2 = new Player(player2Name, player2BoardForShips.Field, player2BoardForShooting.Field);
 
-                } 
-                else if (orientation == "D")
-                {
-                    player.AddShipToList(new Ship(new Tuple<int, int>(column + j, row), shipType));
-                    player.boardWithShips[column + j, row].SquereType = SquereType.Ship;
-                    Display.DisplayBoard(player.boardWithShips);
-                }
-                
-            }
-            
-            
+            GenerateShips.ShipGenerator(player1);
+            GenerateShips.ShipGenerator(player2);
+
+            Round();
 
         }
 
+        public static void Round()
+        {
+
+        }
     }
 }

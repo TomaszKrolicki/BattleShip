@@ -55,9 +55,15 @@ namespace BattleShip_OOP
             Console.WriteLine("Enter ship orientation (R - right , D - down): ");
         }
         
-        public static void CommentForShipPlacement()
+        public static void CommentForShipPlacement(Player player)
         {
+            Console.WriteLine($"Now {player.Name} is choosing.");
             Console.WriteLine("Where you want to place your ship??");
+        }
+
+        public static void AskForPlayerName()
+        {
+            Console.WriteLine("Write your name: ");
         }
 
 
