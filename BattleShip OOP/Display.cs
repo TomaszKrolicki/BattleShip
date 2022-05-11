@@ -30,8 +30,10 @@ namespace BattleShip_OOP
 
         public static void DisplayBoard(Square[,] Field)
         {
+            Console.Write($"  A  B  C  D  E   \n");
             for (int i = 0; i < Field.GetLength(0); i++)
             {
+                Console.Write($"{i} ");
                 for (int j = 0; j < Field.GetLength(1); j++)
                 {
                     Console.Write($"{Field[i, j]} ");
