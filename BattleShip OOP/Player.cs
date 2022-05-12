@@ -33,20 +33,17 @@ namespace BattleShip_OOP
             do
             {
                 Tuple<int, int> cords = Input.GetPlayerCoordinates("shooting", this);
-                if (IsShootValid(cords, player2))
+                if (Validation.IsShootValid(cords, player2))
                 {
                     if (player2.boardWithShips[cords.Item1, cords.Item2].SquereType == SquereType.Ship)
                     {
                         // change to hit
-                        player2.boardWithShips[cords.Item1, cords.Item2].SquereType = SquereType.Hit;
-                        this.boardToShoot[cords.Item1, cords.Item2].SquereType = SquereType.Hit;
-                        Util.RemoveShipSquareFromList(player2, cords);
+                        Util.ChangeToHit(player2, cords, this);
                     } 
                     else if (player2.boardWithShips[cords.Item1, cords.Item2].SquereType == SquereType.Empty)
                     {
                         //change to miss
-                        player2.boardWithShips[cords.Item1, cords.Item2].SquereType = SquereType.Missed;
-                        this.boardToShoot[cords.Item1, cords.Item2].SquereType = SquereType.Missed;
+                        Util.ChangeToMiss(player2, cords, this);
                     } 
                     break;
                 }
@@ -68,13 +65,6 @@ namespace BattleShip_OOP
             {
                 name = value;
             }
-        }
-
-        public bool IsShootValid(Tuple<int, int> cords, Player player2)
-        {
-            if (player2.boardWithShips[cords.Item1, cords.Item2].SquereType == SquereType.Hit) return false;
-            if (player2.boardWithShips[cords.Item1, cords.Item2].SquereType == SquereType.Missed) return false;
-            return true;
         }
     }
 }

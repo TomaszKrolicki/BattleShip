@@ -38,7 +38,18 @@ namespace BattleShip_OOP
             }
         }
 
-        public static void Hit 
+        public static void ChangeToHit(Player player2, Tuple<int,int> cords, Player player1)
+        {
+            player2.boardWithShips[cords.Item1, cords.Item2].SquereType = SquereType.Hit;
+            player1.boardToShoot[cords.Item1, cords.Item2].SquereType = SquereType.Hit;
+            RemoveShipSquareFromList(player2, cords);
+        }
+
+        public static void ChangeToMiss(Player player2, Tuple<int, int> cords, Player player1)
+        {
+            player2.boardWithShips[cords.Item1, cords.Item2].SquereType = SquereType.Missed;
+            player1.boardToShoot[cords.Item1, cords.Item2].SquereType = SquereType.Missed;
+        }
     }
 
 }
