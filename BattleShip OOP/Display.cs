@@ -30,10 +30,11 @@ namespace BattleShip_OOP
 
         public static void DisplayBoard(Square[,] Field)
         {
-            Console.Write($"  A  B  C  D  E   \n");
+            char[] alpha = { 'A', 'B', 'C', 'D', 'E', 'F', 'G' };
+            Console.Write($"  1 2 3 4 5 6 7   \n");
             for (int i = 0; i < Field.GetLength(0); i++)
             {
-                Console.Write($"{i} ");
+                Console.Write($"{alpha[i]} ");
                 for (int j = 0; j < Field.GetLength(1); j++)
                 {
                     Console.Write($"{Field[i, j]} ");
@@ -56,7 +57,12 @@ namespace BattleShip_OOP
         {
             Console.WriteLine("Enter ship orientation (R - right , D - down): ");
         }
-        
+
+        public static void CordsError()
+        {
+            Console.WriteLine("Ship can't be placed here! ");
+        }
+
         public static void CommentForShipPlacement(Player player)
         {
             Console.WriteLine($"Now {player.Name} is choosing.");
