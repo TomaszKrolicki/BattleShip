@@ -27,7 +27,7 @@ namespace BattleShip_OOP
 
             if (orientation == "D")
             {
-                if (x + (int)shipType > 6)
+                if (x - 1 + (int)shipType > 6)
                 {
                     return false;
                 } 
@@ -35,7 +35,7 @@ namespace BattleShip_OOP
                                                     //sprawdza czy statek sie miesci na bordzie w danym kierunku 
             if (orientation == "R")
             {
-                if (y + (int)shipType > 6)
+                if (y - 1+ (int)shipType > 6)
                 {
                     return false;
                 }
