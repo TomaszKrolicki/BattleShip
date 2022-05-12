@@ -13,6 +13,7 @@ namespace BattleShip_OOP
         public Square[,] boardWithShips;
         public List<Ship> shipList;
         public Square[,] boardToShoot;
+        
 
 
         public void AddShipToList(Ship ship)
@@ -31,7 +32,8 @@ namespace BattleShip_OOP
         public void Shoot(Player player2)
         {
             do
-            {
+            {   
+                Display.DisplayBoard(this.boardToShoot);
                 Tuple<int, int> cords = Input.GetPlayerCoordinates("shooting", this);
                 if (Validation.IsShootValid(cords, player2))
                 {
@@ -44,7 +46,7 @@ namespace BattleShip_OOP
                     {
                         //change to miss
                         Util.ChangeToMiss(player2, cords, this);
-                    } 
+                    }
                     break;
                 }
                 Display.ShootInTheSamePlace();
@@ -52,9 +54,10 @@ namespace BattleShip_OOP
             while (true);
         }
 
-        public bool IsAlive(Square[,] board)
+        public bool IsAlive()
         {
-            return false;
+            if (shipList.Count == 0) return false;
+            return true;
         }
 
 

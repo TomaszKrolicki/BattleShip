@@ -23,13 +23,27 @@ namespace BattleShip_OOP
             GenerateShips.ShipGenerator(player1);
             GenerateShips.ShipGenerator(player2);
 
-            Round();
+            Round(player1, player2);
 
         }
 
-        public static void Round()
+        public static void Round(Player player1, Player player2)
         {
-
+            while (true)
+            {
+                player1.Shoot(player2);
+                if (!player2.IsAlive())
+                {
+                    //player1 wygral
+                    break;
+                }
+                player2.Shoot(player1);
+                if (!player1.IsAlive())
+                {
+                    //player1 wygral
+                    break;
+                }
+            }
         }
     }
 }

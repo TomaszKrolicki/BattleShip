@@ -28,14 +28,17 @@ namespace BattleShip_OOP
 
         public static void RemoveShipSquareFromList(Player player2, Tuple<int, int> cords)
         {
+            Ship tmp = default!;
             foreach (Ship ship in player2.shipList)
             {
 
-                if (ship.GetShipCoordinates() == cords)
+                if (ship.GetShipCoordinates().Equals(cords))
                 {
-                    player2.shipList.Remove(ship);
+                    tmp = ship;
                 }
             }
+            Console.WriteLine("usunal statek");
+            player2.shipList.Remove(tmp);
         }
 
         public static void ChangeToHit(Player player2, Tuple<int,int> cords, Player player1)

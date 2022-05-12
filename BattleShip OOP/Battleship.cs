@@ -8,22 +8,24 @@ namespace BattleShip_OOP
     {
         public static void Main(string[] args)
         {
-            Square square = new Square(5,6);
-            square.SquereType = SquereType.Ship;
-            Console.WriteLine(square.Symbol);
-            Console.WriteLine(square);
-            Display.MainMenu();
-            // MainManuValidSelection
-            int player = Input.GetNumberFromMenu(new int[] { 1,2,3});
-            Display.BoardFactoryMenu();         
-            int board = Input.GetNumberFromMenu(new int[] { 1,2 });
-            Board board1 = new Board();
-            Board board2 = new Board();
-            Display.DisplayBoard(board1.Field);
-            Console.WriteLine(" ");
-            Player myPlayer = new Player("Abc", board1.Field, board2.Field);
-            GenerateShips.ShipGenerator(myPlayer);
-            Console.WriteLine();
+            Game.RunGame();
+
+            //Square square = new Square(5,6);
+            //square.SquereType = SquereType.Ship;
+            //Console.WriteLine(square.Symbol);
+            //Console.WriteLine(square);
+            //Display.MainMenu();
+            //// MainManuValidSelection
+            //int player = Input.GetNumberFromMenu(new int[] { 1,2,3});
+            //Display.BoardFactoryMenu();         
+            //int board = Input.GetNumberFromMenu(new int[] { 1,2 });
+            //Board board1 = new Board();
+            //Board board2 = new Board();
+            //Display.DisplayBoard(board1.Field);
+            //Console.WriteLine(" ");
+            //Player myPlayer = new Player("Abc", board1.Field, board2.Field);
+            //GenerateShips.ShipGenerator(myPlayer);
+            //Console.WriteLine();
             //Player player1 = new Player("byleco", player1board);
             //Ship cruiser = new Ship(new Tuple<int, int>(0, 0)); // (0,0), (0,1), (0,2), (0,3), (0,4)
             //player1.AddShipToList(cruiser);
