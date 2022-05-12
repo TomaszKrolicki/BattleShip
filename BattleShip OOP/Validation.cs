@@ -109,7 +109,7 @@ namespace BattleShip_OOP
                 if (board[x, y + 1].Symbol == 'S') return false;
             }
 
-
+            // test
 
             return true;
         }
