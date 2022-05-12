@@ -21,16 +21,6 @@ namespace BattleShip_OOP
             Board board2 = new Board();
             Display.DisplayBoard(board1.Field);
             Console.WriteLine(" ");
-            board1.Field[2, 6].SquereType = SquereType.Ship;
-            Display.DisplayBoard(board1.Field);
-            Console.WriteLine(" ");
-            if (board1.Field[2, 6].SquereType == SquereType.Ship)
-            {
-                board1.Field[2, 6].SquereType = SquereType.Hit;
-            }
-            Display.DisplayBoard(board1.Field);
-            Console.WriteLine(" ");
-            Console.WriteLine(" ");
             Player myPlayer = new Player("Abc", board1.Field, board2.Field);
             Game.ShipGenerator(myPlayer);
             Console.WriteLine();
