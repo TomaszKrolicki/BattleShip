@@ -13,10 +13,24 @@ namespace BattleShip_OOP
             for (int i = 1; i < 6; i++)
             {
                 Display.DisplayBoard(player.boardWithShips);
-                Tuple<int, int> cords = Input.GetPlayerCoordinates("placement", player);
-                string orientation = Input.GetShipOrientation();
-                AddShipsToList(orientation, cords, player, i);
+                
+                do
+                {
+                    Tuple<int, int> cords = Input.GetPlayerCoordinates("placement", player);
+                    string orientation = Input.GetShipOrientation();
+                    if (Validation.PlaceShipValidation(cords.Item1, cords.Item2, player.boardWithShips, (ShipType)i,
+                            orientation))
+                    {
+                        AddShipsToList(orientation, cords, player, i);
+                        break;
+                    }
+                    Display.CordsError();
+
+                } while (true);
+
+
                 // dodac input do kordynatow  i pozycja statku (dol lub lewo)
+
             }
         }
 
@@ -26,6 +40,7 @@ namespace BattleShip_OOP
             int shipLength = (int)shipType;
             int column = cords.Item1;
             int row = cords.Item2;
+            
             for (int j = 0; j < (int)shipLength; j++)
             {
                 if (orientation == "R")
