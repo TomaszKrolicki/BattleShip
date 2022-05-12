@@ -24,9 +24,6 @@ namespace BattleShip_OOP
                 return false;
             }
 
-            //sprawdza czy wgole kordy sa w zakresie//sprawdza czy wgole kordy sa w zakresie
-            //sprawdza czy wgole kordy sa w zakresie
-            
             if (orientation == "D")
             {
                 if (x - 1 + (int)shipType > 6)
@@ -112,7 +109,7 @@ namespace BattleShip_OOP
                 if (board[x, y + 1].Symbol == 'S') return false;
             }
 
-
+            // test
 
             return true;
         }
