@@ -49,9 +49,6 @@ namespace BattleShip_OOP
         {
             player2.boardWithShips[cords.Item1, cords.Item2].SquereType = SquereType.Missed;
             player1.boardToShoot[cords.Item1, cords.Item2].SquereType = SquereType.Missed;
-            //komentarz
-            //cos
         }
     }
-
 }
