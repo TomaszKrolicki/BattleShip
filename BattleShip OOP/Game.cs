@@ -10,12 +10,14 @@ namespace BattleShip_OOP
     {
         public static void RunGame()
         {
-            string player1Name = Input.GetPlayerName();
+            Display.ConsoleClear();
+            string player1Name = Input.GetPlayerName("player1");
             Board player1BoardForShips = new Board();
             Board player1BoardForShooting = new Board();
             Player player1 = new Player(player1Name, player1BoardForShips.Field, player1BoardForShooting.Field);
 
-            string player2Name = Input.GetPlayerName();
+            Display.ConsoleClear();
+            string player2Name = Input.GetPlayerName("player2");
             Board player2BoardForShips = new Board();
             Board player2BoardForShooting = new Board();
             Player player2 = new Player(player2Name, player2BoardForShips.Field, player2BoardForShooting.Field);
@@ -23,6 +25,7 @@ namespace BattleShip_OOP
             GenerateShips.ShipGenerator(player1);
             GenerateShips.ShipGenerator(player2);
 
+            Display.ConsoleClear();
             Round(player1, player2);
 
         }
@@ -32,17 +35,7 @@ namespace BattleShip_OOP
             while (true)
             {
                 player1.Shoot(player2);
-                if (!player2.IsAlive())
-                {
-                    //player1 wygral
-                    break;
-                }
                 player2.Shoot(player1);
-                if (!player1.IsAlive())
-                {
-                    //player1 wygral
-                    break;
-                }
             }
         }
     }

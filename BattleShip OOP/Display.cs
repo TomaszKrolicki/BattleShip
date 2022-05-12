@@ -13,8 +13,7 @@ namespace BattleShip_OOP
             Console.WriteLine("Welcome in Battleship");
             Console.WriteLine();
             Console.WriteLine("1 - Start new game");
-            Console.WriteLine("2 - Display high scores");
-            Console.WriteLine("3 - Exit");
+            Console.WriteLine("2 - Exit");
             Console.WriteLine("Choose number:");
         }
 
@@ -70,16 +69,45 @@ namespace BattleShip_OOP
             Console.WriteLine("Where you want to place your ship??");
         }
 
-        public static void AskForPlayerName()
+        public static void AskForPlayerName(string player)
         {
-            Console.WriteLine("Write your name: ");
+            if (player == "player1") Console.WriteLine("Write name for first player: ");
+            else Console.WriteLine("Write name for second player: ");
+
         }
+        
 
         public static void ShootInTheSamePlace()
         {
             Console.WriteLine("You shot this place!! Choose different one.");
+            Console.WriteLine("Press any key to shoot again.");
+            Console.ReadKey();
         }
 
+        public static void PlayerWon(Player player)
+        {
+            Console.WriteLine($"Congratulation!!! {player.Name} has won!!!");
+            Console.WriteLine("Enter any key to exit.");
+            Console.ReadKey();
+        }
 
+        public static void ConsoleClear()
+        {
+            Console.Clear();
+        }
+
+        public static void ItIsHit()
+        {
+            Console.WriteLine("Good job!!! That's a hit!!!");
+            Console.WriteLine("Press any key for next player to shoot");
+            Console.ReadKey();
+        }
+        
+        public static void ItIsMiss()
+        {
+            Console.WriteLine("Maybe next time :(");
+            Console.WriteLine("Press any key for next player to shoot");
+            Console.ReadKey();
+        }
     }
 }

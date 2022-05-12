@@ -10,10 +10,6 @@ namespace BattleShip_OOP
     {
         public static bool PlaceShipValidation(int x, int y, Square[,] board, ShipType shipType, string orientation)
         {
-            Console.WriteLine("tu sa kordy");
-            Console.WriteLine(x);
-            Console.WriteLine(y);
-
             if (x >= 7 || y >= 7)
             {
                 return false;
@@ -108,9 +104,6 @@ namespace BattleShip_OOP
                 if (board[x, y - 1].Symbol == 'S') return false;
                 if (board[x, y + 1].Symbol == 'S') return false;
             }
-
-            // test
-
             return true;
         }
 

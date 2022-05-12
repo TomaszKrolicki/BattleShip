@@ -67,9 +67,9 @@ namespace BattleShip_OOP
             } while (true);
         }
 
-        public static string GetPlayerName()
+        public static string GetPlayerName(string player)
         {
-            Display.AskForPlayerName();
+            Display.AskForPlayerName(player);
             string playerName = Console.ReadLine();
             return playerName;
         }

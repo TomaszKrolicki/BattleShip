@@ -12,8 +12,9 @@ namespace BattleShip_OOP
         {
             for (int i = 1; i < 6; i++)
             {
+                Display.ConsoleClear();
                 Display.DisplayBoard(player.boardWithShips);
-                
+
                 do
                 {
                     Tuple<int, int> cords = Input.GetPlayerCoordinates("placement", player);
