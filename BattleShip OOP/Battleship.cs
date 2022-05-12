@@ -22,7 +22,7 @@ namespace BattleShip_OOP
             Display.DisplayBoard(board1.Field);
             Console.WriteLine(" ");
             Player myPlayer = new Player("Abc", board1.Field, board2.Field);
-            Game.ShipGenerator(myPlayer);
+            GenerateShips.ShipGenerator(myPlayer);
             Console.WriteLine();
             //Player player1 = new Player("byleco", player1board);
             //Ship cruiser = new Ship(new Tuple<int, int>(0, 0)); // (0,0), (0,1), (0,2), (0,3), (0,4)
