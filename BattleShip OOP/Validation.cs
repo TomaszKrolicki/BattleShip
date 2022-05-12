@@ -116,5 +116,12 @@ namespace BattleShip_OOP
 
             return true;
         }
+
+        public static bool IsShootValid(Tuple<int, int> cords, Player player2)
+        {
+            if (player2.boardWithShips[cords.Item1, cords.Item2].SquereType == SquereType.Hit) return false;
+            if (player2.boardWithShips[cords.Item1, cords.Item2].SquereType == SquereType.Missed) return false;
+            return true;
+        }
     }
 }

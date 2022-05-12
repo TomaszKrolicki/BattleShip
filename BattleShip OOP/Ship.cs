@@ -22,7 +22,10 @@ namespace BattleShip_OOP
             shipLength = (int) _shipType;
         }
 
-        
+        public Tuple<int, int> GetShipCoordinates()
+        {
+            return shipCoordinates;
+        }
 
         public void AddShip(Square square)
         {

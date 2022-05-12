@@ -35,7 +35,7 @@ namespace BattleShip_OOP
         {
             if (mode == "shooting")
             {
-                Display.CommentForShooting();
+                Display.CommentForShooting(player);
             }
             else
             {

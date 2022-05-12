@@ -28,10 +28,29 @@ namespace BattleShip_OOP
             shipList = new List<Ship>();
         }
 
-        //public void GetShoot(int x, int y)
-        //{
-        //    board[x,y] = 'X' ;
-        //}
+        public void Shoot(Player player2)
+        {
+            do
+            {
+                Tuple<int, int> cords = Input.GetPlayerCoordinates("shooting", this);
+                if (Validation.IsShootValid(cords, player2))
+                {
+                    if (player2.boardWithShips[cords.Item1, cords.Item2].SquereType == SquereType.Ship)
+                    {
+                        // change to hit
+                        Util.ChangeToHit(player2, cords, this);
+                    } 
+                    else if (player2.boardWithShips[cords.Item1, cords.Item2].SquereType == SquereType.Empty)
+                    {
+                        //change to miss
+                        Util.ChangeToMiss(player2, cords, this);
+                    } 
+                    break;
+                }
+                Display.ShootInTheSamePlace();
+            }
+            while (true);
+        }
 
         public bool IsAlive(Square[,] board)
         {
