@@ -40,8 +40,9 @@ namespace BattleShip_OOP
             }
         }
 
-        public static void CommentForShooting()
+        public static void CommentForShooting(Player player)
         {
+            Console.WriteLine($"Now {player.Name} is shooting.");
             Console.WriteLine("Where you want to shoot? (ex. 'A1')");
         }
         
@@ -66,7 +67,10 @@ namespace BattleShip_OOP
             Console.WriteLine("Write your name: ");
         }
 
-
+        public static void ShootInTheSamePlace()
+        {
+            Console.WriteLine("You shot this place!! Choose different one.");
+        }
 
 
     }

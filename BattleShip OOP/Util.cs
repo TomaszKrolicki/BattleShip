@@ -25,6 +25,20 @@ namespace BattleShip_OOP
             }
             return false;
         }
+
+        public static void RemoveShipSquareFromList(Player player2, Tuple<int, int> cords)
+        {
+            foreach (Ship ship in player2.shipList)
+            {
+
+                if (ship.GetShipCoordinates() == cords)
+                {
+                    player2.shipList.Remove(ship);
+                }
+            }
+        }
+
+        public static void Hit 
     }
 
 }
